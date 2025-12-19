@@ -1,0 +1,14 @@
+@font-face {
+    font-family: bar-morse;
+    src: url("morse_tech/Morse\ Tech.otf");
+}
+
+@font-face {
+    font-family: bar-text;
+    src: url("cmc7/Cmc7.ttf");
+}
+
+@font-face {
+    font-family: baudot;
+    src: url("baudot_5/baudot5.ttf");
+}

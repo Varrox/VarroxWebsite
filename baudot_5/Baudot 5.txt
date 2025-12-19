@@ -1,0 +1,23 @@
+Baudot 5
+
+The Baudot code, invented by Émile Baudot, is a character set predating
+EBCDIC and ASCII, and the root predecessor to International Telegraph
+Alphabet No 2 (ITA2), the teleprinter code in use until the advent of
+ASCII.
+
+Each character in the alphabet is represented by a series of 5 bits,
+sent over a communication channel such as a telegraph wire, a radio
+signal or in this case a punched paper tape.
+
+This font uses the Baudot Code and the paper tape sprocket holes to make
+a decorative old school techno font..and it is free for personal use.
+
+Enjoy
+
+Richie
+
+
+
+
+
+Copyright Richie Whyte 2008
