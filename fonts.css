@@ -12,3 +12,18 @@
     font-family: baudot;
     src: url("baudot_5/baudot5.ttf");
 }
+
+@font-face {
+    font-family: qr;
+    src: url("QR-Regular.otf");
+}
+
+@font-face {
+    font-family: friend;
+    src: url("friendshipcode.ttf");
+}
+
+@font-face {
+    font-family: code-pink;
+    src: url("code_462w_pink/Code462WPink-Regular.ttf");
+}
