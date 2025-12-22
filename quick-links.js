@@ -4,7 +4,7 @@ const links = {
     "github" : "https://github.com/varrox",
     "bluesky" : "https://bsky.app/profile/varrox.bsky.social",
     "twitter" : "https://x.com/_Varrox",
-    "nonexistence" : "https://realbucketofchicken.github.io/nonexistance/",
+    "Non-Existence" : "https://realbucketofchicken.github.io/nonexistance/",
     "femtanyl" : "https://soundcloud.com/femtanyl"
 }
 

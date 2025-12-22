@@ -30,4 +30,7 @@ a{
     transform-origin:center;
     transform: rotate(deg);
     font-size: 25px;
+    color:rgb(92, 92, 92);
+    
+    text-shadow: 4px 4px 5px #cccbcb;
 }
