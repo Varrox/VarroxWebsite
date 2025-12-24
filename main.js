@@ -4,4 +4,5 @@ function main(){
     apply_links()
     add_ascii(star_01)
     add_ascii(star_02)
+    apply_age()
 }
