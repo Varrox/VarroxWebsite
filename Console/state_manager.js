@@ -43,13 +43,25 @@ function split_path(path)
     return locations
 }
 
+function get_files(directory)
+{
+    var path = split_path(directory)
+
+    var directory = file_system
+    for(var i = 0; i < path.length; i++){
+        directory = directory[path[i]]
+    }
+
+
+}
+
 function delete_file(path)
 {
-    var past_directory = file_system
+    var directory = file_system
     for(var i = 0; i < path.length - 1; i++){
-        past_directory = past_directory[path]
+        directory = directory[path[i]]
     }
     
-    delete files[past_directory[path[path.length - 1]]]
-    delete past_directory[path[path.length - 1]]
+    delete files[directory[path[path.length - 1]]]
+    delete directory[path[path.length - 1]]
 }
