@@ -44,7 +44,7 @@ function remove_location(args){
 }
 
 function curl(args){
-
+    
 }
 
 function catenate(args){ // Can only get files in current directory
