@@ -2,6 +2,7 @@ const links = {
     "godot" : "https://godotengine.org",
     "youtube" : "https://youtube.com/@Varrox",
     "github" : "https://github.com/varrox",
+    "soundcloud" : "https://soundcloud.com/",
     "bluesky" : "https://bsky.app/profile/varrox.bsky.social",
     "Non-Existence" : "https://realbucketofchicken.github.io/nonexistance/",
     "femtanyl" : "https://soundcloud.com/femtanyl",

@@ -34,17 +34,20 @@ a{
 }
 
 .links>th, td{
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    text-decoration: underline;
 }
 
-footer{
+footer {
     width: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: darkgrey;
     border-radius: 0px;
-    opacity: .6;
+    opacity: .5;
+    text-align: center;
 }
 
 html, body{
