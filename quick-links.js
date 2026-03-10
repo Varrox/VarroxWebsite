@@ -3,9 +3,10 @@ const links = {
     "youtube" : "https://youtube.com/@Varrox",
     "github" : "https://github.com/varrox",
     "bluesky" : "https://bsky.app/profile/varrox.bsky.social",
-    "twitter" : "https://x.com/_Varrox",
     "Non-Existence" : "https://realbucketofchicken.github.io/nonexistance/",
-    "femtanyl" : "https://soundcloud.com/femtanyl"
+    "femtanyl" : "https://soundcloud.com/femtanyl",
+    "tyler-the-creator" : "https://soundcloud.com/tylerthecreatorofficial",
+    "golemm" : ""
 }
 
 const class_name = "quicklink"
@@ -32,6 +33,6 @@ function change_to_link(element){
     var a = document.createElement("a")
     a.href = links[link]
     a.target = "_blank"
-    a.innerText = link
+    a.innerText = element.innerText
     element.replaceWith(a)
 }

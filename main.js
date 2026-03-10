@@ -5,6 +5,8 @@ function main(){
     add_ascii(star_01, "star_01")
     add_ascii(star_02, "star_02")
     apply_info()
+    apply_shake()
+    apply_confetti()
 }
 
 function apply_info() {
