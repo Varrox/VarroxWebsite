@@ -7,21 +7,84 @@ a{
     color:black;
 }
 
+.info>*{
+    margin-bottom: 10px;
+    font-size: inherit;
+    background-color: transparent;
+    transition: font-size 0.15s, background-color 0.15s;
+}
+
+.info>*:hover{
+    font-size: 110%;
+}
+
+.info>*> :is(.name, .age, .pronouns) {
+    transition: background-color 0.2s;
+}
+
+.info>*:hover > :is(.name, .age, .pronouns){
+    background-color: rgb(255, 255, 192);
+    border-radius: 7px;
+}
+
+.links{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 100%;
+}
+
+.links>th, td{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+footer{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: darkgrey;
+    border-radius: 0px;
+    opacity: .6;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
+    min-height: 75vh;
+    font-size: 130%;
+}
+
+.content{
+    margin: 10px;
+}
+
+h1{
+    margin: auto;
+}
+
+.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Pushes the entire layer behind everything else */
+    overflow: hidden;
+}
+
+#star_01 { top: 50px; left: 10%;}
+#star_02 { top: 400px; right: 50%;}
+
 .ascii{
     font-family: Arial, Helvetica, sans-serif;
 
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Safari, Chrome, Opera */
-    -khtml-user-select: none;
-    /* Konqueror HTML */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
     user-select: none;
-    /* Non-prefixed version, currently supported in all modern browsers */
     
     line-height: 1.25em;
     letter-spacing: -0.05em;
@@ -30,7 +93,20 @@ a{
     transform-origin:center;
     transform: rotate(deg);
     font-size: 25px;
-    color:rgb(92, 92, 92);
+    color:rgb(0, 0, 0);
+
+    width: 300px;
+    height: auto;
+
+    transition: color .5s;
     
     text-shadow: 4px 4px 10px #cccbcb;
+
+    position: absolute;
+
+    opacity: 0.2;
+}
+
+.ascii:hover{
+    color:rgb(194, 194, 194);
 }

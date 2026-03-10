@@ -1,10 +1,11 @@
 
-function add_ascii(ascii){
+function add_ascii(ascii, name){
     var text = document.createElement("p")
     text.className = "ascii"
 
     text.innerText = ascii
-    document.body.appendChild(text)
+    text.id = name;
+    document.getElementsByClassName("background")[0].appendChild(text)
 }
 
 const star_01 = `
