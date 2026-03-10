@@ -1,6 +1,6 @@
 const PARTICLE_COUNT = 8;
 const CONFETTI_BUTTONS = document.getElementsByClassName("confetti");
-const COLORS = ['#f00', '#0f0', '#00f', 'rgba(206, 206, 8, 1)', 'rgba(145, 0, 145, 1)', 'rgba(40, 146, 165, 1)'];
+const COLORS = ['#f00', '#0f0', '#00f', 'rgba(255, 255, 0, 1)', 'rgba(210, 55, 210, 1)', 'rgba(74, 223, 249, 1)'];
 
 function apply_confetti(){
     for(var i = 0; i < CONFETTI_BUTTONS.length; i++){

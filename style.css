@@ -57,12 +57,13 @@ html, body{
     margin: 0;
     padding: 0;
 
-    min-height: 75vh;
+    min-height: 100vh;
     font-size: 130%;
 }
 
 .content{
     margin: 10px;
+    height:150vh;
 }
 
 h1{
@@ -127,7 +128,7 @@ h1{
 @keyframes fade_out {
     0% {opacity: 0%;}
     20% {opacity: 100%;}
-    60% {opacity: 100%;}
+    50% {opacity: 100%;}
     100% {opacity: 0%;}
 }
 
