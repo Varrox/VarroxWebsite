@@ -168,7 +168,7 @@ h1{
     cursor: text;
 }
 
-@media only screen and (max-width: 1199px) /* Mobile */
+@media only screen and (max-width: 37.46875em) /* Mobile */
 {
     footer{
         font-size: 80%;
