@@ -34,8 +34,8 @@ a{
 }
 
 .links>th, td{
-    padding-left: 30px;
-    padding-right: 30px;
+    width: 175px;
+
     text-align: center;
     text-decoration: underline;
 }
@@ -168,14 +168,36 @@ h1{
     cursor: text;
 }
 
-.left_panel{
-    margin-right:49%; 
-    margin-left: 20px;
+@media only screen and (max-width: 1199px) /* Mobile */
+{
+    footer{
+        font-size: 80%;
+    }
+
+    .links>th, td{
+        width: 145px;
+    }
+
+    .left_panel, .right_panel{
+        margin-bottom: 40px; 
+    }
 }
 
-.right_panel{
-    margin-left:49%; 
-    margin-right: 20px;
+@media only screen and (min-width: 800px) 
+{
+    .left_panel{
+        margin-right:49%; 
+        margin-left: 20px;
+    }
+
+    .right_panel{
+        margin-left:49%; 
+        margin-right: 20px;
+    }
+
+    .half-width{
+        width: 50%;
+    }
 }
 
 .md-header{
