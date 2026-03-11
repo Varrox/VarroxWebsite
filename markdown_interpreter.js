@@ -223,6 +223,10 @@ const python_keywords = [
 const ender = "</span>"
 const starter = "<span class=\"codetext"
 
+function default_text(text){
+    return text.replaceAll('\n', "<br>")
+}
+
 function python(text)
 {
     var inserts = []
@@ -411,9 +415,6 @@ function python(text)
 
 function html(text)
 {
-    const starter = "<span class=\"codetext"
-    const ender = "</span>"
-
     var inserts = []
 
     for(var i = 0; i < text.length; i++)
@@ -429,6 +430,31 @@ function html(text)
             inserts.push([i, ender + starter + " operator\">"])
             inserts.push([i + 1, ender])
         }
+    }
+
+    var offset = 0;
+
+    for(var i = 0; i < inserts.length; i++)
+    {
+        text = insert(text, inserts[i][0] + offset, inserts[i][1])
+        offset += inserts[i][1].length
+    }
+    
+    return text
+}
+
+function bash(text){
+    var splits = text.trim().split('\n');
+
+    var inserts = []
+
+    var l = 0;
+
+    for(var i = 0; i < splits.length; i++)
+    {
+        inserts.push([l, starter + " func\">"]);
+        inserts.push([l + splits[i].indexOf(' '), ender]);
+        l += splits[i].length + 1;
     }
 
     var offset = 0;

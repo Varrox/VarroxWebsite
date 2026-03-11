@@ -1,7 +1,7 @@
 const mds = {
-    "simplesound" : {lnk: "https://raw.githubusercontent.com/Varrox/simplesound/main/README.md", img: ""},
-    "quick-add-menu" : {lnk: "https://raw.githubusercontent.com/Varrox/Quick-Add-Menu/main/README.md", img: ""},
-    "ascii-renderer" : {lnk: "https://raw.githubusercontent.com/Varrox/ASCII-Renderer/main/README.md", img: ""}
+    "simplesound" : {lnk: "https://raw.githubusercontent.com/Varrox/simplesound/main/README.md", link:"https://github.com/Varrox/simplesound/", img: ""},
+    "quick-add-menu" : {lnk: "https://raw.githubusercontent.com/Varrox/Quick-Add-Menu/main/README.md", link:"https://github.com/Varrox/Quick-Add-Menu/", img: ""},
+    "ascii-renderer" : {lnk: "https://raw.githubusercontent.com/Varrox/ASCII-Renderer/main/README.md", link:"https://github.com/Varrox/ASCII-Renderer/", img: ""}
 }
 
 async function apply_md()
@@ -34,66 +34,31 @@ async function change_to_md(element){
         const markdownText = await response.text();
 
         element.innerHTML = convert_md_to_html(markdownText);
+		
+		add_link(element, mds[linkKey].link)
     } catch (error) {
         console.error("Fetch error:", error);
         element.innerHTML = "<em>Failed to load content.</em>";
     }
 }
 
-function setup_code_areas() 
-{
-	var code_sections = document.getElementsByClassName("code")
-
-	for (var i = 0; i < code_sections.length; i++) {
-		code_snips[i] = code_sections[i].textContent
-
-		switch(code_sections[i].getAttribute("id")) // Apply code color coating
-		{
-			case "py":
-				code_sections[i].innerHTML = python(code_sections[i].innerHTML)
-				break
-			case "cs":
-				code_sections[i].innerHTML = python(code_sections[i].innerHTML)
-				break
-			case "gdscript":
-				code_sections[i].innerHTML = python(code_sections[i].innerHTML)
-				break
-			case "html":
-				code_sections[i].innerHTML = html(code_sections[i].innerHTML)
-				break
+function add_link(element, link){
+	for(var i = 0; i < element.childNodes.length; i++){
+		let header = element.childNodes[i];
+		if(!header.tagName){
+			continue;
 		}
-		
-		code_sections[i].innerHTML = "<button class=\"copy\" onclick=\"copyToClipboard(code_snips[" + i + "]);\">Copy</button>" + code_sections[i].innerHTML
-	}
+		let tag = header.tagName.toLowerCase();
+		if(tag.startsWith('h') && tag.length === 2 && !isNaN(tag[1])){
+			let a = document.createElement("a");
+			a.href = link;
+			a.target = "_blank";
+			a.classList.add("md-header");
 
-	var code_parts = document.getElementsByClassName("codesnip")
+			header.parentNode.insertBefore(a, header);
+			a.appendChild(header);
 
-	for(var i = 0; i < code_parts.length; i++)
-	{
-		code_parts[i].setAttribute("onclick", "copyToClipboard(\"" + code_parts[i].textContent + "\")")
-	}
-}
-
-function setup_page_buttons(){
-	page_buttons = document.getElementsByClassName("page")
-
-	for (var i = 0; i < page_buttons.length; i++){
-		var b = page_buttons[i].className.replace("page ", "")
-		console.log(b)
-		page_buttons[i].addEventListener("click", function(){window.location.href = b})
-	}
-}
-
-async function copyToClipboard(textToCopy) 
-{
-	if (textToCopy == undefined) {
-		return;
-	}
-
-	try {
-		navigator.clipboard.writeText(textToCopy);
-		console.log('Text copied to clipboard');
-	} catch (err) {
-		console.error('Failed to copy text: ', err);
+			break;
+		}
 	}
 }
