@@ -1,0 +1,55 @@
+.comment
+{
+    color:green;
+}
+
+.stringcomment
+{
+    color:yellow;
+}
+
+.operator
+{
+    color:white;
+}
+
+.numerical
+{
+    color:lightgreen;
+}
+
+.string
+{
+    color:rgb(209, 136, 84);
+}
+
+.backslash
+{
+    color:gold;
+}
+
+.logical
+{
+    color:violet;
+}
+
+.keyword
+{
+    color:rgb(87, 141, 211);
+}
+
+.func
+{
+    color:rgb(246, 246, 153);
+}
+
+.func_parenthases
+{
+    color:rgb(183, 183, 54)
+}
+
+.codetext
+{
+    font-family: inherit;
+    background-color: inherit;
+}

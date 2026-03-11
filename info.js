@@ -1,6 +1,6 @@
 const birthday = "March 11, 2010"
 
-const boymode = false;
+const boymode = true;
 
 const info = {
     name: !boymode ? "aria" : "alex",

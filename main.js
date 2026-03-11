@@ -7,4 +7,9 @@ function main() {
     apply_info()
     apply_shake()
     apply_confetti()
+    
+    apply_md()
+
+    setup_code_areas()
+	setup_page_buttons()
 }

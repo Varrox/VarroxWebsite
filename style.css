@@ -60,13 +60,13 @@ html, body{
     margin: 0;
     padding: 0;
 
-    min-height: 100vh;
+    min-height: 150vh;
     font-size: 130%;
 }
 
 .content{
     margin: 10px;
-    height:150vh;
+    height:150%;
 }
 
 h1{
@@ -155,4 +155,21 @@ h1{
     width: 10px;
     height: 10px;
     animation: fade_out 2s, confetti-fall 2s;
+}
+
+.left_panel, .right_panel{
+    margin-top: 25px; 
+    margin-bottom: 25px; 
+    background-color: rgba(128, 128, 128, 0.176); 
+    padding: 20px;
+}
+
+.left_panel{
+    margin-right:49%; 
+    margin-left: 20px;
+}
+
+.right_panel{
+    margin-left:49%; 
+    margin-right: 20px;
 }
