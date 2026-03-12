@@ -28,6 +28,6 @@ function spawn_confetti(element){
 
         BACKGROUND.appendChild(confetti);
 
-        setTimeout(() => { confetti.remove(); }, 2000)
+        setTimeout(() => { confetti.remove(); }, 1950)
     }
 }
