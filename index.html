@@ -42,31 +42,23 @@
                 <li>Game engine : <span class="quicklink godot">Godot</span></li>
             </ul>
             <hr>
-            <canvas id="donut-ascii" width="128" height="128"></canvas>
-            <script>
-                const canvas = document.getElementById("donut-ascii");
-                var ctx = canvas.getContext("2d");
-                var img = new Image(); // Create new img element
-
-                img.addEventListener("load", () => {
-                ctx.drawImage(img, 0, 0);
-                });
-
-                img.src = "Assets/3D/0000.png";
-            </script>
-            <div class="right_panel">
-                <p>
-                    Things I have quite a lot of experience in:
-                </p>
-                <ul class="info">
-                    <li>C# : <span class="exp c#"></span></li>
-                    <li>C++ : <span class="exp c++"></span></li>
-                    <li>Python : <span class="exp py"></span></li>
-                    <li>Web Development : <span class="exp webdev"></span></li>
-                    <li>GDScript : <span class="exp gdscript"></span></li>
-                    <li>Blender : <span class="exp blender"></span></li>
-                </ul>
+            <div class="col_container">
+                <canvas id="donut-ascii" width="64" height="64"><script src="animation-player.js"></script></canvas>
+                <div class="panel" style="margin-left: auto;">
+                    <p>
+                        Things I have quite a lot of experience in:
+                    </p>
+                    <ul class="info">
+                        <li>C# : <span class="exp c#"></span></li>
+                        <li>C++ : <span class="exp c++"></span></li>
+                        <li>Python : <span class="exp py"></span></li>
+                        <li>Web Development : <span class="exp webdev"></span></li>
+                        <li>GDScript : <span class="exp gdscript"></span></li>
+                        <li>Blender : <span class="exp blender"></span></li>
+                    </ul>
+                </div>
             </div>
+            
             <hr>
             <h1>
                 Here are some of my projects:
