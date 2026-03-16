@@ -7,33 +7,30 @@ const size_x = 64, size_y = 64;
 let images;
 
 async function get_images(){
-    const imgs = [];
-    let loaded_images = 0;
+    const promises = [];
 
-    for(var i = 0; i <= frames; i++){
-        var img = new Image();
+    for(let i = 0; i <= frames; i++){
+        const img = new Image();
         img.crossOrigin = "anonymous";
 
-        img.onload = () => {
-            loaded_images++;
-        }
+        const p = new Promise((resolve) => {
+            img.onload = () => resolve(img);
+            img.onerror = () => {
+                console.error("Failed to load:", img.src);
+                resolve(null); // Resolve anyway so we don't hang forever
+            };
+        });
 
         img.src = folder + '0'.repeat(4 - i.toString().length) + i + ".png";
 
         
-        imgs.push(img);
-        promises.push(promise);
+        promises.push(p);
     }
 
-    await new Promise((resolve) => {
-        const interval = setInterval(() => {
-      if (loaded_images == frames) {
-        clearInterval(interval);
-        resolve();
-      }
-    }, 100)});
+    const loadedImgs = await Promise.all(promises);
 
-    return imgs;
+    console.log("loaded images")
+    return loadedImgs;
 }
 
 let frame = 0;
@@ -64,11 +61,13 @@ function set_frame(){
     }
 }
 
-const ascii_chars = " .:-=+*#%@█"
+const ascii_chars = ".:-=+*$#%&@█"
 
 function create_ascii() {
     const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const data = imgData.data;
+
+    let b_ = "";
 
     for (let i = 0; i < data.length; i += 4) {
         const r = data[i];
@@ -76,10 +75,17 @@ function create_ascii() {
         const b = data[i + 2];
         const a = data[i + 3] / 255.0;
 
-        const rgbColor = `rgba(${r}, ${g}, ${b}, ${a})`;
-        
-        
+        var l = Math.min(Math.max(Math.floor((Math.sqrt(r * r + g * g + b * b) / 255.0) * (ascii_chars.length - 1)), 0), ascii_chars.length - 1);
+        b_ += a > 0 ? (ascii_chars.substring(l, l + 1)) : " ";
+
+        if((i / 4) % size_x == 0){
+            b_ += '\n'
+        }
+
+        //const rgbColor = `rgba(${r}, ${g}, ${b}, ${a})`;
     }
+    console.clear()
+    //console.log(b_)
 }
 
 async function play_animation(){
