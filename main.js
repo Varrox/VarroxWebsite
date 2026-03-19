@@ -1,17 +1,20 @@
 window.onload = function(){main()}
 
 async function main() {
-    apply_links()
-    add_ascii(star_01, "star_01")
-    add_ascii(star_02, "star_02")
-    apply_info()
-    apply_shake()
-    apply_confetti()
-    
-    await apply_md()
+    apply_links();
+	
+    add_ascii(star_01, "star_01");
+    add_ascii(star_02, "star_02");
+	add_ascii(star_03, "star_03");
 
-    setup_code_areas()
-	play_animation()
+    apply_info();
+    apply_shake();
+    apply_confetti();
+    
+    await apply_md();
+
+    setup_code_areas();
+	play_animation();
 }
 
 let code_snips = {}

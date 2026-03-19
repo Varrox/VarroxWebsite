@@ -48,7 +48,7 @@ async function get_images(){
 }
 
 function set_frame(){
-    text_display.innerHTML = ascii_images[frame]
+    text_display.innerHTML = ascii_images[frame];
 
     frame++;
 
