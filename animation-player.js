@@ -7,7 +7,7 @@ const animation_info = {
     size_y : 32
 }
 
-let images;
+let ascii_images;
 let frame = 0;
 let play_id;
 
@@ -48,10 +48,7 @@ async function get_images(){
 }
 
 function set_frame(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(images[frame], 0, 0);
-
-    create_ascii()
+    text_display.innerHTML = ascii_images[frame]
 
     frame++;
 
@@ -65,9 +62,19 @@ function set_frame(){
     }
 }
 
+async function create_ascii_frames(){
+    let images = await get_images();
+    ascii_images = [];
+    for(var i = 0; i < images.length; i++){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(images[i], 0, 0);
+
+        ascii_images.push(create_ascii())
+    }
+}
+
 function create_ascii() {
-    const img_data = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const data = img_data.data;
+    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
 
     const s = "<span style=\"color:";
     const se = ";\">";
@@ -79,22 +86,22 @@ function create_ascii() {
         const r = data[i];
         const g = data[i + 1];
         const b = data[i + 2];
-        const a = data[i + 3] / 255.0;
         const magnitude = Math.sqrt(r * r + g * g + b * b) / 255.0;
-        const rgb = `rgb(${r}, ${g}, ${b})`;
         const cs = (ascii_chars.length - 1);
 
-        var lightness = Math.min(Math.max(Math.floor(magnitude * cs), 0), cs);
-        ascii_text += a > 0 ? (s + rgb + se + ascii_chars.substring(lightness, lightness + 1) + e) : " ";
+        const lightness = Math.min(Math.max(Math.floor(magnitude * cs), 0), cs);
+        ascii_text += (data[i + 3]) > 0 ? `${s}rgb(${r}, ${g}, ${b})${se}${ascii_chars.charAt(lightness)}${e}` : " ";
 
         if(((i / 4) + 1) % canvas.width == 0){
             ascii_text += "<br>";
         }
     }
-    text_display.innerHTML = ascii_text;
+    return ascii_text;
 }
 
 async function play_animation(){
-    images = await get_images();
+    await create_ascii_frames();
+    canvas.remove();
+
 	play_id = setInterval(set_frame, (1.0 / animation_info.fps) * 1000);
 }
