@@ -15,7 +15,7 @@ function apply_links()
     const elements = document.getElementsByClassName("quicklink")
     for(var i = 0; i < elements.length; i++){
         change_to_link(elements[i])
-        i--
+        i--;
     }
 }
 
