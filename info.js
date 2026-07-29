@@ -13,6 +13,7 @@ const info = {
 const experience = {
     "c#" : get_years("December 30, 2023"),
     "c++" : get_years("June 30, 2024"),
+    "java" : get_years("September 5, 2025"),
     "py" : get_years("August 20, 2024"),
     "webdev" : get_years("June 30, 2024"),
     "gdscript" : get_years("August 20, 2024"),
